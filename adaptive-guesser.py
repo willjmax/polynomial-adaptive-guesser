@@ -17,14 +17,14 @@ poly_array = []
 N = polynomial(sys.argv, 1) + 1 #solving the polynomial at 1 gives the summation of the coefficients
 pN = polynomial(sys.argv, N) #pN = a_0 + a_1N + a_2N^2 ...
 a = pN % N #this equals a_0, as a_0 is the only term not divisible by N (N bigger than all coefficients
-poly_array.append(a)
+#poly_array.append(a)
 
 y = pN
-while a > 0:
+while y > 0:
+	poly_array.append(a)
 	y = (y - a) / N #subtract off current coefficient, divide by N to factor the next coefficient
 	a = y % N
-	if a > 0:
-		poly_array.append(a)
+
 
 print poly_array
 	
